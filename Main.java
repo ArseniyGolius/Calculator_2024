@@ -73,8 +73,9 @@ public class Main {
     }
 
     public static void job_3(String a) {
-        if (a.length() > 40) {
-            System.out.println(a + "...");
+        if (a.length() > 42) {
+          StringBuffer b = new StringBuffer(a);
+          System.out.println(b.replace(a.lastIndexOf("\""),a.lastIndexOf("\"") +1,"...\""));
         } else {
             System.out.println(a);
         }
@@ -112,14 +113,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
