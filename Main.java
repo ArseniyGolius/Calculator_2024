@@ -73,10 +73,21 @@ public class Main {
     }
 
     public static void job_3(String a) {
+            StringBuffer b = new StringBuffer();
+           // b.replace(a.lastIndexOf("\""),a.lastIndexOf("\"") +1,"...\"");
+            for (int i=0;i<a.length();i++){
+                if (i>40){
+                    b.append("...\"");
+                    break;
+                }
+                else {
+                    b.append(a.charAt(i));
+                }
+            }
         if (a.length() > 42) {
-          StringBuffer b = new StringBuffer(a);
-          System.out.println(b.replace(a.lastIndexOf("\""),a.lastIndexOf("\"") +1,"...\""));
-        } else {
+            System.out.println(b);
+        }
+        else {
             System.out.println(a);
         }
 
