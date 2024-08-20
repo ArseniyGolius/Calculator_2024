@@ -74,7 +74,6 @@ public class Main {
 
     public static void job_3(String a) {
             StringBuffer b = new StringBuffer();
-           // b.replace(a.lastIndexOf("\""),a.lastIndexOf("\"") +1,"...\"");
             for (int i=0;i<a.length();i++){
                 if (i>40){
                     b.append("...\"");
@@ -96,23 +95,15 @@ public class Main {
     public static void job_4(StringBuffer a, StringBuffer b, char c)  {
         String r = String.valueOf(b);
         String q = String.valueOf(a);
-        int bv = 0;
-        for (int i=0;i<q.length();i++){
-            if(Character.isDigit(q.charAt(i))){
-                bv+=1;
-            }
-            if (bv==r.length()){
-                System.out.println("Нельзя вводить число первым значением");
-            }
-        }
+
 
 
         try {
-            int y = Integer.parseInt(r);
-            if (a.length() <= 12 || y < 12) {
-                job(a, b, c);
-            } else {
-                System.out.println("Строка должна быть не более 10 симвлов, число от 1 до 10");
+                int y = Integer.parseInt(r);
+                if (a.length() <= 12 && y <= 10) {
+                    job(a, b, c);
+                } else {
+                    System.out.println("Строка должна быть не более 10 симвлов, число от 1 до 10");
             }
         } catch (NumberFormatException u){
             if (a.length() <= 12 && b.length() <= 12) {
